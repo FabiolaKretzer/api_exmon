@@ -5,6 +5,8 @@ defmodule ApiExmon.Application do
 
   use Application
 
+  alias ApiExmonWeb.Endpoint
+
   def start(_type, _args) do
     children = [
       # Start the Ecto repository
@@ -28,7 +30,7 @@ defmodule ApiExmon.Application do
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
   def config_change(changed, _new, removed) do
-    ApiExmonWeb.Endpoint.config_change(changed, removed)
+    Endpoint.config_change(changed, removed)
     :ok
   end
 end
