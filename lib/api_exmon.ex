@@ -10,4 +10,5 @@ defmodule ApiExmon do
   defdelegate fetch_pokemon(name_pokemon), to: Pokemon.Get, as: :call
 
   defdelegate create_trainer_pokemon(trainer_pokemons), to: TrainerPokemon.Create, as: :call
+  defdelegate delete_trainer_pokemon(id), to: TrainerPokemon.Delete, as: :call
 end
