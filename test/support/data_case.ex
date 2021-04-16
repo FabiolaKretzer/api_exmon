@@ -31,7 +31,7 @@ defmodule ApiExmon.DataCase do
   end
 
   setup tags do
-    :ok = EctoSandbox.checkout(ApiExmon.Repo)
+    :ok = Sandbox.checkout(ApiExmon.Repo)
 
     unless tags[:async] do
       Sandbox.mode(ApiExmon.Repo, {:shared, self()})
