@@ -15,6 +15,18 @@ defmodule ApiExmonWeb.TrainerPokemonsController do
     |> handle_delete(conn)
   end
 
+  def show(conn, %{"id" => id}) do
+    id
+    |> ApiExmon.fetch_trainer_pokemon()
+    |> handle_response(conn, "show.json", :ok)
+  end
+
+  def update(conn, params) do
+    params
+    |> ApiExmon.update_trainer_pokemon()
+    |> handle_response(conn, "update.json", :ok)
+  end
+
   defp handle_delete({:ok, _pokemon}, conn) do
     conn
     |> put_status(:no_content)
