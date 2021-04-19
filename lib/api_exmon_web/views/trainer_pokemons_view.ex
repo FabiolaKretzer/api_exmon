@@ -40,7 +40,6 @@ defmodule ApiExmonWeb.TrainerPokemonsView do
         }
       }) do
     %{
-      message: "Pokemon created!",
       pokemon: %{
         id: id,
         inserted_at: inserted_at,
